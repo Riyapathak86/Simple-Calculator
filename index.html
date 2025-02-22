@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">CALCULATOR</h1>
+    <div class="container">
+        <div id="container">
+            <input type="text" id="inp" readonly>
+
+            <div class="sc">
+                <button class="box" onclick="handleClick('7')">7</button>
+                <button class="box" onclick="handleClick('8')">8</button>
+                <button class="box" onclick="handleClick('9')">9</button>
+                <button class="box" onclick="handleClick('*')">*</button>
+            </div>
+            
+            <div class="sc">
+                <button class="box" onclick="handleClick('4')">4</button>
+                <button class="box" onclick="handleClick('5')">5</button>
+                <button class="box" onclick="handleClick('6')">6</button>
+                <button class="box" onclick="handleClick('-')">-</button>
+            </div>
+            
+            <div class="sc">
+                <button class="box" onclick="handleClick('1')">1</button>
+                <button class="box" onclick="handleClick('2')">2</button>
+                <button class="box" onclick="handleClick('3')">3</button>
+                <button class="box" onclick="handleClick('+')">+</button>
+            </div>
+
+            <div class="sc">
+                <button class="box" onclick="handleClick('0')">0</button>
+                <button class="box" onclick="handleClick('.')">.</button>
+                <button class="box" onclick="calculateResult()">=</button>
+                <button class="box" onclick="clearInput()">C</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let x = "";
+
+      
+        function handleClick(value) {
+            x += value;
+            document.querySelector('#inp').value = x;
+        }
+
+    
+        function calculateResult() {
+           
+                x = eval(x);
+                document.querySelector('#inp').value = x;
+           
+        }
+
+      
+        function clearInput() {
+            x = "";
+            document.querySelector('#inp').value = "";
+        }
+    </script>
+</body>
+</html>
